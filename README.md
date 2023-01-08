@@ -7,3 +7,5 @@
 - main: exemplo inicial mostrando a criação de um servidor usando metodo nativo do Node com http.
 
 - server_local_nodemon: Arquivos de exemplo de aplicação de rotas usando nodemon.
+
+- express: Arquivos com exemplos e informações sobre o framework Express e boas práticas para desenvolvimento.

@@ -9,3 +9,5 @@
 - server_local_nodemon: Arquivos de exemplo de aplicação de rotas usando nodemon.
 
 - express: Arquivos com exemplos e informações sobre o framework Express e boas práticas para desenvolvimento.
+
+- projeto_livraria: Foi criado um CRUD local, utilizando os métodos GET, POST, PUT e DELETE para remover dados de um array. Foi utilizado o Postman para testar as rotas.

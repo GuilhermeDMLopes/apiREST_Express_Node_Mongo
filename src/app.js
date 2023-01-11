@@ -53,3 +53,7 @@ function buscaLivros(id) {
     return livros.findIndex(livro => livro.id == id)
 }
 export default app;
+
+/*
+An error occured during the connection to BD. Resolved by changing the VPN's to google 8.8.8.8
+*/

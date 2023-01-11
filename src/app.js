@@ -16,29 +16,10 @@ app.use(express.json());
 //Usar a rota passando o app instanciado como parametro
 routes(app);
 
-app.get('/livros/:id', (req, res) => {    
-    let index = buscaLivros(req.params.id);    
-    res.json(livros[index]);
-})
+/*
+Depois de completado os arquivos livrosCOntroller e livrosROutes, todas as rotas foram apagadas.
+A classe app tem que se manter limpa
+Arquivo app.js serve para conectar ao banco e passar ao arquivo de rotas a instancia do express para utilizarmos as rotas
+*/
 
-app.post('/livros', (req, res) => {
-    livros.push(req.body);
-    res.status(201).send('Livro cadastrado com sucesso');
-})
-
-app.put('/livros/:id', (req, res) => {
-    let index = buscaLivros(req.params.id);
-    livros[index].titulo = req.body.titulo;
-    res.json(livros);
-})
-
-app.delete('/livros/:id', (req, res) => {   
-    let {id} = req.params 
-    let index = buscaLivros(id);
-    livros.splice(index, 1)
-    res.send(`Livro ${id} removido com sucesso`);
-})
-function buscaLivros(id) {
-    return livros.findIndex(livro => livro.id == id)
-}
 export default app;

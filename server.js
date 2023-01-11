@@ -6,3 +6,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Servidor escutando na porta em http://localhost:${port}`)
 })
+
+/*
+Arquivo server serve para iniciar um servidor e atribuir portas
+*/

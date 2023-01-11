@@ -1,5 +1,6 @@
 //Diretório e arquivo relacionados ao banco de dados
 //Seguindo boas praticas
+//npm install mongoose@6.2.6
 import mongoose from "mongoose";
 
 //Fazendo conexão com o banco

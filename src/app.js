@@ -1,10 +1,8 @@
-//Adicionando rotas e informações do projeto livraria
 import express from "express";
-//importando a variavel de conexão do banco
 import db from "./config/dbConnect.js"
+//Fazendo importação do schema
+import livros from "./models/Livro.js"
 
-//Criando a conexão com o banco
-//Se conectar ou der erro, devemos ser notificados da situação.
 db.on("error", console.log.bind(console, 'Erro de conexão'))
 db.once("open", () => {
     console.log("Conexão com o banco feita com sucesso")
@@ -14,17 +12,21 @@ const app = express();
 
 app.use(express.json());
 
-const livros = [
+/*const livros = [
     {id:1, "titulo": "senhor dos aneis"},
     {id:2, "titulo": "O hobbit"}
-]
+]*/
 
 app.get('/', (req,res) => {
     res.status(200).send('Curso de Node');
 })
 
 app.get('/livros', (req,res) => {
-    res.status(200).json(livros);
+    //Encontrando livros no BD
+    //Se houver um erro, mostrar erro. Se encontrar os livros, mostrar os livros
+    livros.find((err, livros) => {
+        res.status(200).json(livros);
+    })    
 })
 
 app.get('/livros/:id', (req, res) => {    
@@ -53,7 +55,3 @@ function buscaLivros(id) {
     return livros.findIndex(livro => livro.id == id)
 }
 export default app;
-
-/*
-An error occured during the connection to BD. Resolved by changing the VPN's to google 8.8.8.8
-*/

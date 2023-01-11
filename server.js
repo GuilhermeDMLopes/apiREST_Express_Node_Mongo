@@ -1,6 +1,5 @@
-//A partir da branch projeto_livraria
-//Inicio da implementação da comunicação com o banco de dados seguindo as boas praticas
-
+//A partir da branch conectandoBanco
+//Inicio da implementação de schemas do BD usando boas praticas
 import app from './src/app.js'
 const port = process.env.PORT || 3000;
 

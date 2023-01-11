@@ -1,22 +1,18 @@
-//Para não ter que ficar importando varios arquivos referente a rotas
-//Arquivo onde serão concentradas todas as rotas, sejam de livros, editoras, autor, etc.
-
 import express from "express";
-//Devemos importar todas as routes
-import livros from "./livrosRoutes.js"
+import livros from "./livrosRoutes.js";
+//Adicionando rotas de autores
+import autores from "./autoresRoutes.js";
 
-//Criando as rotas, conjunto de todas as rotas que vamos usar
-//Quando formos usar no app, passamos a aplicação como parametro para usar o que tiver de rotas
 const routes = (app) => {
     app.route('/').get((req, res) => {
         res.status(200).send({titulo: "Curso de Node"})
     })
 
-    //Usar as outras routas
     app.use(
-        //Para usar JSON
         express.json(),
-        livros
+        livros,
+        //adicionando autores
+        autores
     )
 }
 

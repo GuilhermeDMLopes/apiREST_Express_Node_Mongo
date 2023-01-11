@@ -17,3 +17,5 @@
 - schemasBD: Criado arquivo para criação de schemas do BD, utilizando boas práticas. Criado a pasta models para isso
 
 - evoluindoAPI: Arquivos contendo o diretório controller que irá controlar e redirecionar as rotas para cada modelo e o diretório routes contendo todas as rotas. O arquivo app.js também foi alterado mantendo as boas práticas. Todos os métodos GET, POST, PUT, DELETE foram implementados seguindo as boas práticas MVC.
+
+- integrandoSchemas: Arquivos exemplificando como funciona a integração de schemas.

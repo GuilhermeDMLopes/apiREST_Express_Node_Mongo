@@ -1,5 +1,5 @@
-//A partir da branch conectandoBanco
-//Inicio da implementação de schemas do BD usando boas praticas
+//A partir da branch schemasBD
+//Inicio da implementação de controllers usando boas praticas
 import app from './src/app.js'
 const port = process.env.PORT || 3000;
 

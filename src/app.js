@@ -1,7 +1,8 @@
 import express from "express";
 import db from "./config/dbConnect.js"
-//Fazendo importação do schema
 import livros from "./models/Livro.js"
+//Importando o arquivo com as rotas
+import routes from "./routes/index.js";
 
 db.on("error", console.log.bind(console, 'Erro de conexão'))
 db.once("open", () => {
@@ -12,22 +13,8 @@ const app = express();
 
 app.use(express.json());
 
-/*const livros = [
-    {id:1, "titulo": "senhor dos aneis"},
-    {id:2, "titulo": "O hobbit"}
-]*/
-
-app.get('/', (req,res) => {
-    res.status(200).send('Curso de Node');
-})
-
-app.get('/livros', (req,res) => {
-    //Encontrando livros no BD
-    //Se houver um erro, mostrar erro. Se encontrar os livros, mostrar os livros
-    livros.find((err, livros) => {
-        res.status(200).json(livros);
-    })    
-})
+//Usar a rota passando o app instanciado como parametro
+routes(app);
 
 app.get('/livros/:id', (req, res) => {    
     let index = buscaLivros(req.params.id);    

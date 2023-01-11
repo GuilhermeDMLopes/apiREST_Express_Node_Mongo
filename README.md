@@ -12,6 +12,8 @@
 
 - projeto_livraria: Foi criado um CRUD local, utilizando os métodos GET, POST, PUT e DELETE para remover dados de um array. Foi utilizado o Postman para testar as rotas.
 
-- conectandoBanco: Criado arquivo para conexão com banco de dados MongoDB. Estamos usando o MongoDB Atlas. Seguindo as boas práticas.
+- conectandoBanco: Criado arquivo para conexão com banco de dados MongoDB. Estamos usando o MongoDB Atlas. Seguindo as boas práticas. Criado a pasta config para isso
 
-- schemasBD: Criado arquivo para criação de schemas do BD, utilizando boas práticas.
+- schemasBD: Criado arquivo para criação de schemas do BD, utilizando boas práticas. Criado a pasta models para isso
+
+- evoluindoAPI: Arquivos contendo o diretório controller que irá controlar e redirecionar as rotas para cada modelo e o diretório routes contendo todas as rotas.  

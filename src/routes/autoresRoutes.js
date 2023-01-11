@@ -1,5 +1,3 @@
-//Classe routes de autor
-//Segue o mesmo modelo de autoresRoutes
 import express from "express";
 import AutorController from "../controllers/autoresController.js";
 

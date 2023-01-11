@@ -1,5 +1,3 @@
-//Classe controller de autor
-//Segue o mesmo modelo de autoresController
 import autores from "../models/Autor.js";
 
 class AutorController {
@@ -61,8 +59,3 @@ class AutorController {
 }
 
 export default AutorController;
-
-/*
-Selecionar ctrl + d em cima da palavra e apertar varias vezes ate retornar na que voce selecionou
-voce pode alterar todas ao mesmo tempo
-*/

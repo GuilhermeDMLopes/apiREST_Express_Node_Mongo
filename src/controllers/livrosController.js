@@ -4,7 +4,6 @@ import livros from "../models/Livro.js";
 class LivroController {
     static listarLivros = (req, res) => {
         livros.find()
-            //Vai popular o campo autor
             .populate('autor')        
             .exec((err, livros) => {
             res.status(200).json(livros);
@@ -15,8 +14,6 @@ class LivroController {
         const id = req.params.id;
 
         livros.findById(id)
-            //Aqui ele faz a mesma listagem, porém mostra apenas o nome do autor
-            //Se remover o 'nome' ele mostra o livro passado como parametro completamente
             .populate('autor', 'nome')        
             .exec((err, livros) => {
             if(err) {
@@ -65,10 +62,8 @@ class LivroController {
     }
 
     static listarLivrosPorEditora = (req, res) => {
-        //Recebe a editora que vem como query param (pode ser mais de um parametro)
         const editora = req.query.editora
 
-        //Verifica se tem a editora no banco
         livros.find({'editora': editora}, {}, (err, livros) => {
             if(!err) {
                 res.status(200).send(livros)
@@ -81,8 +76,3 @@ class LivroController {
 }
 
 export default LivroController;
-
-/*
-AO fazer o PUT mudando o nome do autor do livro. No postman:
-fomos em Alterar livro, colocamos o id do livro na URL e no body colocamos o autor e seu id.
-*/
